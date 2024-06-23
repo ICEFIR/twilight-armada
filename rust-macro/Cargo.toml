@@ -1,0 +1,13 @@
+[package]
+name = "twilight-armada-macro"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "twilight_armada_proc_macro"
+proc-macro = true
+
+[dependencies]
+quote = "*"
+syn = { version = "*", features = ["extra-traits"] }
+proc-macro2 = "*"
