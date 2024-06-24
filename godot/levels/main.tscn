@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://00bth5kcpca2"]
+[gd_scene load_steps=2 format=3 uid="uid://00bth5kcpca2"]
+
+[ext_resource type="Texture2D" uid="uid://rjo4ckw20exl" path="res://icon.svg" id="2_0kglo"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Test" type="TwilightSprint2DDemo" parent="."]
+stest = 0.0
+position = Vector2(245, 121)
+texture = ExtResource("2_0kglo")

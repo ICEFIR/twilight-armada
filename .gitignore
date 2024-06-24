@@ -37,5 +37,6 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-#project specific
+# project specific, these folders will be synced to b2 bucket
 assets/
+addons/

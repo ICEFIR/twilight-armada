@@ -1,5 +1,5 @@
 [package]
-name = "twilight-armada-macro"
+name = "twilight-armada-proc-macro"
 version = "0.1.0"
 edition = "2021"
 
