@@ -15,7 +15,7 @@ use serde::{Serialize, Deserialize};
 struct TwilightSprint2DDemo {
     attributes: TwilightSprite2DDemoAtrributes,
     #[export]
-    test: f64,
+    stest: f64,
     base: Base<Sprite2D>
 }
 
@@ -27,7 +27,7 @@ struct TwilightSprite2DDemoAtrributes {
 #[godot_api]
 impl ISprite2D for TwilightSprint2DDemo {
     fn init(base: Base<Sprite2D>) -> Self {
-        godot_print!("Hello, world!"); // Prints to the Godot console
+        godot_print!("Twilight Armada Rust Extension initilisation"); // Prints to the Godot console
         
         Self {
             attributes: TwilightSprite2DDemoAtrributes {

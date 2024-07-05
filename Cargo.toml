@@ -1,8 +1,9 @@
 [workspace]
 resolver = "2"
 
-members = [
+members = [ 
+    "better-terrain-faster",
     "rust",
-    "rust-proc-macro"
+    "rust-proc-macro",
 ]
 

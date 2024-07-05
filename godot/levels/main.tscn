@@ -1,10 +1,206 @@
-[gd_scene load_steps=2 format=3 uid="uid://00bth5kcpca2"]
+[gd_scene load_steps=7 format=4 uid="uid://00bth5kcpca2"]
 
-[ext_resource type="Texture2D" uid="uid://rjo4ckw20exl" path="res://icon.svg" id="2_0kglo"]
+[ext_resource type="Texture2D" uid="uid://d1rt5ii6c2isy" path="res://assets/2d/Super_Retro_Collection/exterior-pack-full_version/godot_autotiles/ground_autotile_0.png" id="1_jd64c"]
+[ext_resource type="Texture2D" uid="uid://bmfcatjobgyd" path="res://assets/2d/Super_Retro_Collection/exterior-pack-full_version/godot_autotiles/ground_autotile_5.png" id="1_k31rs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yvdpd"]
+texture = ExtResource("1_k31rs")
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:0/0/metadata/_better_terrain = {
+7: [0],
+"type": 0
+}
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0/metadata/_better_terrain = {
+3: [0],
+15: [0],
+"type": 0
+}
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/bottom_right_corner = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/metadata/_better_terrain = {
+3: [0],
+11: [0],
+"type": 0
+}
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrains_peering_bit/bottom_right_corner = 0
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/0/metadata/_better_terrain = {
+3: [0],
+7: [0],
+"type": 0
+}
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/top_left_corner = 0
+0:1/0/metadata/_better_terrain = {
+3: [0],
+11: [0],
+"type": 0
+}
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0/metadata/_better_terrain = {
+3: [0],
+7: [0],
+15: [0],
+"type": 0
+}
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/terrains_peering_bit/bottom_right_corner = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0/metadata/_better_terrain = {
+3: [0],
+7: [0],
+11: [0],
+15: [0],
+"type": 0
+}
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0/terrains_peering_bit/top_left_corner = 0
+3:1/0/terrains_peering_bit/top_right_corner = 0
+3:1/0/metadata/_better_terrain = {
+7: [0],
+11: [0],
+15: [0],
+"type": 0
+}
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+0:2/0/metadata/_better_terrain = {
+"type": 0
+}
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0/metadata/_better_terrain = {
+11: [0],
+15: [0],
+"type": 0
+}
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrains_peering_bit/bottom_right_corner = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0/metadata/_better_terrain = {
+3: [0],
+11: [0],
+15: [0],
+"type": 0
+}
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrains_peering_bit/bottom_left_corner = 0
+3:2/0/terrains_peering_bit/top_left_corner = 0
+3:2/0/metadata/_better_terrain = {
+7: [0],
+11: [0],
+"type": 0
+}
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/metadata/_better_terrain = {
+"type": 0
+}
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrains_peering_bit/bottom_right_corner = 0
+1:3/0/metadata/_better_terrain = {
+3: [0],
+"type": 0
+}
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrains_peering_bit/bottom_left_corner = 0
+2:3/0/terrains_peering_bit/top_right_corner = 0
+2:3/0/metadata/_better_terrain = {
+7: [0],
+15: [0],
+"type": 0
+}
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrains_peering_bit/top_left_corner = 0
+3:3/0/metadata/_better_terrain = {
+11: [0],
+"type": 0
+}
+
+[sub_resource type="TileSet" id="TileSet_ch2gi"]
+terrain_set_0/mode = 1
+terrain_set_0/terrain_0/name = "DirtGrass"
+terrain_set_0/terrain_0/color = Color(0.059339, 0.777783, 0.895853, 1)
+sources/0 = SubResource("TileSetAtlasSource_yvdpd")
+metadata/_better_terrain = {
+"decoration": ["Decoration", Color(0.411765, 0.411765, 0.411765, 1), 3, [], {
+"path": "res://addons/better-terrain/icons/Decoration.svg"
+}],
+"terrains": [["DirtGrassRoad", Color(0.353376, 0.651851, 0.372218, 1), 1, [], {
+"path": ""
+}]],
+"version": "0.2"
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac47u"]
+texture = ExtResource("1_jd64c")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4ptc6"]
+sources/0 = SubResource("TileSetAtlasSource_ac47u")
 
 [node name="Main" type="Node2D"]
 
-[node name="Test" type="TwilightSprint2DDemo" parent="."]
-stest = 0.0
-position = Vector2(245, 121)
-texture = ExtResource("2_0kglo")
+[node name="Tiles" type="Node" parent="."]
+
+[node name="Roads" type="TileMapLayer" parent="Tiles"]
+tile_map_data = PackedByteArray("AABsACUAAAACAAEAAABtACUAAAADAAEAAABtACYAAAADAAIAAABsACYAAAACAAEAAABrACYAAAABAAAAAABrACUAAAABAAAAAABrACQAAAABAAMAAABtACcAAAADAAIAAABsACcAAAACAAEAAABrACcAAAABAAAAAABtACgAAAADAAIAAABsACgAAAACAAEAAABrACgAAAABAAAAAABtACkAAAADAAIAAABsACkAAAACAAEAAABrACkAAAABAAAAAABtACoAAAACAAAAAABsACoAAAACAAEAAABrACoAAAABAAAAAABtACsAAAACAAEAAABsACsAAAACAAEAAABrACsAAAABAAAAAABtACwAAAABAAIAAABsACwAAAABAAIAAABrACwAAAAAAAIAAABuACsAAAACAAEAAABuACwAAAABAAIAAABuACoAAAABAAEAAABvACsAAAACAAEAAABvACwAAAABAAIAAABvACoAAAACAAEAAABwACsAAAACAAEAAABwACwAAAABAAIAAABwACoAAAACAAAAAABxACsAAAACAAEAAABxACwAAAABAAIAAABxACoAAAABAAEAAAByACsAAAACAAEAAAByACwAAAABAAIAAAByACoAAAACAAEAAABzACsAAAADAAEAAABzACwAAAADAAMAAABzACoAAAACAAEAAABxACkAAAABAAAAAAByACkAAAACAAEAAABzACkAAAACAAEAAAB0ACoAAAADAAIAAAB0ACsAAAADAAMAAAByACYAAAACAAEAAABzACYAAAACAAEAAAB0ACYAAAADAAEAAAByACUAAAACAAEAAABzACUAAAACAAEAAAB0ACUAAAACAAEAAAByACQAAAADAAAAAABzACQAAAADAAAAAAB0ACQAAAADAAAAAAB1ACUAAAADAAIAAAB1ACYAAAADAAMAAAB1ACQAAAAAAAAAAABxACUAAAACAAEAAABxACQAAAADAAAAAABwACUAAAACAAEAAABwACQAAAACAAAAAABvACYAAAACAAEAAABvACQAAAACAAEAAABuACYAAAABAAAAAABuACQAAAACAAEAAABuACMAAAADAAAAAABvACMAAAADAAAAAABwACMAAAAAAAAAAABtACMAAAADAAAAAABsACMAAAABAAMAAABwACcAAAADAAIAAABvACcAAAACAAEAAABuACcAAAABAAAAAABwACgAAAADAAIAAABvACgAAAACAAEAAABuACgAAAABAAAAAABwACkAAAADAAIAAABvACkAAAACAAEAAABuACkAAAABAAAAAAByACgAAAADAAAAAABxACgAAAABAAMAAABxACcAAAAAAAIAAAB0ACcAAAADAAMAAABsACQAAAABAAEAAABtACQAAAACAAEAAABuACUAAAACAAIAAABvACUAAAACAAEAAABwACYAAAADAAEAAABxACYAAAACAAIAAAByACcAAAABAAIAAABzACcAAAABAAIAAABzACgAAAADAAAAAAB0ACgAAAAAAAAAAAB0ACkAAAADAAIAAAA=")
+tile_set = SubResource("TileSet_ch2gi")
+
+[node name="Grounds" type="TileMapLayer" parent="Tiles"]
+tile_set = SubResource("TileSet_4ptc6")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 66.0
+offset_right = 700.0
+offset_bottom = 142.0
+text = "Design"
