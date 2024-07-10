@@ -23,9 +23,8 @@ impl IEditorPlugin for BetterTerrianFasterEditor{
     }
 
     fn enter_tree(&mut self) {
-        godot_print!("Better terrain faster Rust Extension Enter Tree!"); // Prints to the Godot console
+        godot_print!("Better terrain faster Initilising!"); // Prints to the Godot console
         if let Ok(scene) = try_load::<PackedScene>("res://addons/better-terrain-faster/editor/dock.tscn") {
-            godot_print!("Hello, world from better terrain faster enter tree! Scene: {:?}", scene);
             let scene_instance = scene.instantiate_as::<Control>();
             self.base_mut().add_control_to_bottom_panel(scene_instance.clone(), GString::from("Better Terrain Faster"));
             self.dock_scene = Some(scene_instance);
@@ -33,7 +32,7 @@ impl IEditorPlugin for BetterTerrianFasterEditor{
             godot_print!("Failed to load scene");
             return;
         }
-
+        godot_print!("Better terrain faster Rust Extension initialised!"); 
     }
 
     fn exit_tree(&mut self) {
