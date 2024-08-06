@@ -1,6 +1,8 @@
-mod editor;
 use godot::prelude::*;
-struct BetterTerrianFasterExtension;
+
+mod editor;
+mod dock_controller;
+struct BetterTerrainFasterExtension;
 
 #[gdextension]
-unsafe impl ExtensionLibrary for BetterTerrianFasterExtension{}
+unsafe impl ExtensionLibrary for BetterTerrainFasterExtension {}
