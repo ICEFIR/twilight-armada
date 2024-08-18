@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3 uid="uid://i83fmvlehwbl"]
+
+[ext_resource type="Script" path="res://scripts/ship_controller.gd" id="1_d6phu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib4kj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hx1jk"]
+
+[node name="ShipController" type="RigidBody2D"]
+collision_layer = 2147483649
+collision_mask = 2147483649
+gravity_scale = 0.0
+script = ExtResource("1_d6phu")
+
+[node name="DefenceModule" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ib4kj")
+
+[node name="ColorRect" type="ColorRect" parent="DefenceModule"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ModuleWeaponSlot" type="Area2D" parent="DefenceModule"]
+collision_layer = 0
+collision_mask = 1073741824
+
+[node name="WeaponDetectionBox" type="CollisionShape2D" parent="DefenceModule/ModuleWeaponSlot"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_hx1jk")
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
+
+[node name="DefenceModule2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_ib4kj")
+
+[node name="ColorRect" type="ColorRect" parent="DefenceModule2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ModuleWeaponSlot" type="Area2D" parent="DefenceModule2"]
+collision_layer = 0
+collision_mask = 1073741824
+
+[node name="WeaponDetectionBox" type="CollisionShape2D" parent="DefenceModule2/ModuleWeaponSlot"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_hx1jk")
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
+
+[node name="DefenceModule3" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 0)
+shape = SubResource("RectangleShape2D_ib4kj")
+
+[node name="ColorRect" type="ColorRect" parent="DefenceModule3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ModuleWeaponSlot" type="Area2D" parent="DefenceModule3"]
+collision_layer = 0
+collision_mask = 1073741824
+
+[node name="WeaponDetectionBox" type="CollisionShape2D" parent="DefenceModule3/ModuleWeaponSlot"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_hx1jk")
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
+
+[node name="DefenceModule4" type="CollisionShape2D" parent="."]
+position = Vector2(20, 0)
+shape = SubResource("RectangleShape2D_ib4kj")
+
+[node name="ColorRect" type="ColorRect" parent="DefenceModule4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ModuleWeaponSlot" type="Area2D" parent="DefenceModule4"]
+collision_layer = 0
+collision_mask = 1073741824
+
+[node name="WeaponDetectionBox" type="CollisionShape2D" parent="DefenceModule4/ModuleWeaponSlot"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_hx1jk")
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
+
+[node name="DefenceModule5" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_ib4kj")
+
+[node name="ColorRect" type="ColorRect" parent="DefenceModule5"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ModuleWeaponSlot" type="Area2D" parent="DefenceModule5"]
+collision_layer = 0
+
+[node name="WeaponDetectionBox" type="CollisionShape2D" parent="DefenceModule5/ModuleWeaponSlot"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_hx1jk")
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)

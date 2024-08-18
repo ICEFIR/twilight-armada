@@ -292,11 +292,14 @@ if [ -z "$GODOT_EXECUTABLE" ]; then
 fi
 
 # Extract version from Godot executable
-GODOT_VERSION=$(./$GODOT_EXECUTABLE --version | tr -d '\r')
-if [ -z "$GODOT_VERSION" ]; then
+FULL_GODOT_VERSION=$(./$GODOT_EXECUTABLE --version | tr -d '\r')
+if [ -z "$FULL_GODOT_VERSION" ]; then
     echo "Failed to extract Godot version. Exiting."
     exit 1
 fi
+
+# Extract the desired part of the version string
+GODOT_VERSION=$(echo "$FULL_GODOT_VERSION" | cut -d'.' -f1-3 | cut -d'+' -f1-2)
 echo "Detected Godot version: $GODOT_VERSION"
 
 # Copy the Godot executable to /usr/bin/godot
