@@ -1,8 +1,9 @@
 extends Node2D
 
-var selection_start = Vector2.ZERO
-var selection_end = Vector2.ZERO
-var is_dragging = false
+@export var ship_draggable: bool = true
+var selection_start: Vector2 = Vector2.ZERO
+var selection_end: Vector2 = Vector2.ZERO
+var is_dragging: = false
 var selected_units = []
 var selection_area: CollisionShape2D
 var selection_area_color_rect: ColorRect
@@ -14,24 +15,15 @@ func _ready() -> void:
     update_selection_area()
     pass # Replace with function body.
 
-func _unhandled_input(event):
-    if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-        if event.pressed:
-            # Start selection
-            selection_start = get_local_mouse_position()
-            is_dragging = true
-        elif is_dragging:
-            # End selection only if we were dragging
-            finish_selection()
-    
-
-    
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+    Global.ship_draggable = ship_draggable
     if is_dragging:
         selection_end = get_local_mouse_position()
         update_selection_area()
-
+    if Input.is_action_just_pressed("LeftClick"):
+        selection_start = get_local_mouse_position()
+        is_dragging = true
     if Input.is_action_just_released("LeftClick"):
         finish_selection()
 

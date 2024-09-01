@@ -1,27 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://32chlkys6cl3"]
+[gd_scene load_steps=3 format=3 uid="uid://32chlkys6cl3"]
 
 [ext_resource type="PackedScene" uid="uid://cqcfkmxq2v7ob" path="res://scripts/player_controller.tscn" id="1_fmhik"]
 [ext_resource type="PackedScene" uid="uid://i83fmvlehwbl" path="res://components/ship_controller.tscn" id="1_vnls3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_605fp"]
-
 [node name="BattleGround" type="Node2D"]
+texture_filter = 1
 position = Vector2(481, 351)
-
-[node name="ShipController" parent="." instance=ExtResource("1_vnls3")]
-position = Vector2(-227, -78)
-
-[node name="ShipController2" parent="." instance=ExtResource("1_vnls3")]
-position = Vector2(294, -75)
 
 [node name="PlayerController" parent="." instance=ExtResource("1_fmhik")]
 position = Vector2(-535, -393)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-228, 76)
-mass = 4.996
-gravity_scale = 0.0
-metadata/_edit_group_ = true
+[node name="ShipController" parent="." instance=ExtResource("1_vnls3")]
+position = Vector2(-227, -78)
+linear_damp = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_605fp")
+[node name="ShipController2" parent="." instance=ExtResource("1_vnls3")]
+position = Vector2(294, -75)
+
+[node name="ShipController3" parent="." instance=ExtResource("1_vnls3")]
+position = Vector2(-41, 146)

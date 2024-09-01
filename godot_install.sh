@@ -299,7 +299,7 @@ if [ -z "$FULL_GODOT_VERSION" ]; then
 fi
 
 # Extract the desired part of the version string
-GODOT_VERSION=$(echo "$FULL_GODOT_VERSION" | cut -d'.' -f1-3 | cut -d'+' -f1-2)
+GODOT_VERSION=$(echo "$FULL_GODOT_VERSION" | sed -E 's/^Godot Engine v//; s/\.gha.*$//; s/\+.*$//')
 echo "Detected Godot version: $GODOT_VERSION"
 
 # Copy the Godot executable to /usr/bin/godot
