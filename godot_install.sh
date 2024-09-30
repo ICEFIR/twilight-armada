@@ -272,7 +272,7 @@ echo "$ARTIFACT_URLS" | while read -r url; do
     fi
 
     echo "Unzipping ${filename}"
-    unzip -n -o "$filename"
+    unzip -n "$filename"
     
     # Check for and unzip godot-limboai.editor zip file
     LIMBOAI_ZIP=$(find . -name "godot-limboai.editor.*.zip" -type f)
@@ -297,9 +297,9 @@ if [ -z "$FULL_GODOT_VERSION" ]; then
     echo "Failed to extract Godot version. Exiting."
     exit 1
 fi
-
+echo "Full Godot Version: $FULL_GODOT_VERSION"
 # Extract the desired part of the version string
-GODOT_VERSION=$(echo "$FULL_GODOT_VERSION" | sed -E 's/^Godot Engine v//; s/\.gha.*$//; s/\+.*$//')
+GODOT_VERSION=$(echo "$FULL_GODOT_VERSION" | grep -oP '[0-9\.]+\.limboai\+[a-zA-Z0-9\.]+(?=\.gha)')
 echo "Detected Godot version: $GODOT_VERSION"
 
 # Copy the Godot executable to /usr/bin/godot
