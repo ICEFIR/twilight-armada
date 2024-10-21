@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://da3kkvsgfekak"]
+
+[node name="ShipBuilder" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 261.0
+offset_bottom = 646.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 261.0
+offset_bottom = 645.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2

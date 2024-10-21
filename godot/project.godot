@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
-PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Global="*res://scripts/global.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -28,13 +28,17 @@ directories/dch_directory={}
 directories/dtl_directory={}
 glossary/default_case_sensitive=true
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [dotnet]
 
 project/assembly_name="twilight-armada"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/better-terrain-faster/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/imjp94.yafsm/plugin.cfg", "res://addons/inputhelper/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/better-terrain-faster/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot-rapier2d/plugin.cfg", "res://addons/imjp94.yafsm/plugin.cfg", "res://addons/inputhelper/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
 
 [input]
 
@@ -60,6 +64,7 @@ RightClick={
 
 [physics]
 
+2d/run_on_separate_thread=true
 2d/physics_engine="Rapier2D"
 
 [rendering]

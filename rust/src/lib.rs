@@ -1,4 +1,3 @@
-use godot::engine::ISprite2D;
 use godot::prelude::*;
 
 struct TwilightArmadaExtension;
@@ -6,9 +5,8 @@ struct TwilightArmadaExtension;
 #[gdextension]
 unsafe impl ExtensionLibrary for TwilightArmadaExtension{}
 
+use godot::classes::{ISprite2D, Sprite2D};
 use godot::prelude::*;
-use godot::classes::Sprite2D;
-use serde::{Serialize, Deserialize};
 
 #[derive(GodotClass)]
 #[class(base=Sprite2D)]

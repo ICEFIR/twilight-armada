@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyqgrb555xr3"]
+
+[ext_resource type="Script" path="res://scripts/benchmark.gd" id="1_cfa3e"]
+[ext_resource type="Script" path="res://scripts/fps_counter.gd" id="2_hn0mw"]
+[ext_resource type="Texture2D" uid="uid://rjo4ckw20exl" path="res://icon.svg" id="2_ptdsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb3io"]
+size = Vector2(1191, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdfia"]
+size = Vector2(20, 671)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i44x"]
+size = Vector2(23, 670)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1663"]
+size = Vector2(1187, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbcmr"]
+
+[node name="Benchmark" type="Node2D"]
+script = ExtResource("1_cfa3e")
+tex = ExtResource("2_ptdsu")
+
+[node name="StaticBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody"]
+position = Vector2(585.5, 0)
+shape = SubResource("RectangleShape2D_rb3io")
+
+[node name="StaticBody2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2"]
+position = Vector2(0, 325.5)
+shape = SubResource("RectangleShape2D_wdfia")
+
+[node name="StaticBody3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody3"]
+position = Vector2(1154, 327)
+shape = SubResource("RectangleShape2D_3i44x")
+
+[node name="StaticBody4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody4"]
+position = Vector2(577.5, 654)
+shape = SubResource("RectangleShape2D_f1663")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 21.0
+offset_right = 102.0
+offset_bottom = 59.0
+script = ExtResource("2_hn0mw")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1072, 99)
+shape = SubResource("RectangleShape2D_fbcmr")

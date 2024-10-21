@@ -267,8 +267,8 @@ tile_set = SubResource("TileSet_ch2gi")
 tile_set = SubResource("TileSet_4ptc6")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 410.0
-offset_top = 236.0
-offset_right = 710.0
-offset_bottom = 312.0
+offset_left = 406.0
+offset_top = 159.0
+offset_right = 706.0
+offset_bottom = 235.0
 text = "Design"

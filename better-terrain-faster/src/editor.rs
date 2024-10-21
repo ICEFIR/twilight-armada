@@ -1,22 +1,15 @@
-use std::borrow::BorrowMut;
 use std::collections::HashMap;
-use std::sync::{Arc, Mutex};
 use std::time::UNIX_EPOCH;
 
-use godot::classes::{Button, Control, EditorPlugin, IEditorPlugin, TileMap, TileSet};
+use godot::classes::{Button, Control, EditorPlugin, IEditorPlugin, TileSet};
 use godot::prelude::*;
-use once_cell::sync::Lazy;
-use ron::de;
 use serde::{Deserialize, Serialize};
-
-use crate::dock_controller::BetterTerrainFasterDockController;
 
 static EDITOR_DOCK_PATH: &str = "res://addons/better-terrain-faster/editor/dock.tscn";
 static FILE_WATCH_CHECK_INTERVAL_MS: i32 = 2000;
-static mut BETTER_TERRAIN_FASTER_EDITOR_INSTANCE: Option<*mut BetterTerrainFasterEditor> = None;
 
 #[derive(GodotClass)]
-#[class(base=EditorPlugin, tool, init, editor_plugin)]
+#[class(base=EditorPlugin, tool, init)]
 struct BetterTerrainFasterEditor {
     file_watch_countdown_timer: i32,
     file_watch: HashMap<String, FileWatchMeta>,
@@ -59,12 +52,23 @@ impl IEditorPlugin for BetterTerrainFasterEditor {
     // Edit has incorrect calling signature, so this cannot be implemented in rust
     // https://github.com/godot-rust/gdext/issues/494
     // This call will be delegated to the GDScript side
-    // fn edit(&mut self, object: Gd<Object>)
-    // }
+    fn edit(&mut self, object: Option<Gd<Object>>) {
+        if object.is_none() {
+            return;
+        }
+        let object = object.unwrap();
+        if object.is_class(GString::from("TileMapLayer")) {
+            godot_print!("Better terrain faster editing tile map layer");
+            // self.tile_map_layer = Some(object.cast::<TileMapLayer>().unwrap());
+        } else if object.is_class(GString::from("TileSet")) {
+            godot_print!("Better terrain faster editing tile set");
+            self.tile_set = Some(object.cast::<TileSet>());
+        }
+    }
 
     fn enter_tree(&mut self) {
         self.load_dock_ui();
-        self.setup_filewatch();
+        self.setup_file_watch();
     }
 
     fn exit_tree(&mut self) {
@@ -74,43 +78,12 @@ impl IEditorPlugin for BetterTerrainFasterEditor {
 
     fn ready(&mut self) {
         self.file_watch_countdown_timer = FILE_WATCH_CHECK_INTERVAL_MS;
-        unsafe {
-            BETTER_TERRAIN_FASTER_EDITOR_INSTANCE = Some(self);
-        }
     }
 }
 
 #[godot_api]
 impl BetterTerrainFasterEditor {
-    /// This is the bridging function that will be called from GDScript
-    /// Due to the limitations of the current gdext binding, we cannot directly override the `edit` function
-    /// Which has the incorrect calling signature
-    /// DO NOT USE UNLESS YOU KNOW WHAT YOU ARE DOING
-    #[func]
-    fn update_better_terrain_faster_object(object: Option<Gd<Object>>) {
-        if object.is_none() {
-            return;
-        }
-        let object = object.unwrap();
-        if object.is_class(GString::from("TileSet")) {
-            let tile_set = object.cast::<TileSet>();
-            unsafe {
-                if let Some(instance) = BETTER_TERRAIN_FASTER_EDITOR_INSTANCE {
-                    (*instance).tile_set_changed(tile_set);
-                    godot_print!("TileSet updated in BetterTerrainFasterEditor");
-                } else {
-                    godot_error!("BetterTerrainFasterEditor instance not found");
-                }
-            }
-        }
-    }
-
-    fn tile_set_changed(&mut self, tile_set: Gd<TileSet>) {
-        self.tile_set = Some(tile_set);
-        godot_print!("TileSet changed");
-    }
-
-    fn setup_filewatch(&mut self) {
+    fn setup_file_watch(&mut self) {
         self.file_watch.insert(EDITOR_DOCK_PATH.to_string(), load_file_metadata(EDITOR_DOCK_PATH));
     }
 
