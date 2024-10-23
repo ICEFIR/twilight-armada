@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk6ulisv4mu2q"]
+
+[ext_resource type="Script" path="res://ui/sprite_item.gd" id="1_qtugc"]
+[ext_resource type="Texture2D" uid="uid://ehin7g77lfwy" path="res://assets/2d/general/outlined-white.png" id="1_xnuju"]
+
+[node name="SpriteItem" type="Panel"]
+custom_minimum_size = Vector2(20, 20)
+script = ExtResource("1_qtugc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, 10)
+texture = ExtResource("1_xnuju")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"pending_changes": {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": ""
+}
+}

@@ -32,23 +32,6 @@ impl IEditorPlugin for BetterTerrainFasterEditor {
         }
     }
 
-    fn handles(&self, object: Gd<Object>) -> bool {
-        if !object.is_instance_valid() {
-            return false;
-        }
-        return object.is_class(GString::from("TileMapLayer")) || object.is_class(GString::from("TileSet"));
-    }
-
-    fn physics_process(&mut self, delta: f64) {
-        // Count timer for file watch. Once it reaches 0, check for file changes
-        // if self.dock_scene_instance.is_some() {
-        //     godot_print!("Better terrain faster is dock visible: {}", self.dock_scene_instance.as_ref().unwrap().is_visible());
-        // }
-
-        self.file_watch_check(delta)
-    }
-
-    /* Setup only handles TileMayLayers */
     // Edit has incorrect calling signature, so this cannot be implemented in rust
     // https://github.com/godot-rust/gdext/issues/494
     // This call will be delegated to the GDScript side
@@ -64,6 +47,23 @@ impl IEditorPlugin for BetterTerrainFasterEditor {
             godot_print!("Better terrain faster editing tile set");
             self.tile_set = Some(object.cast::<TileSet>());
         }
+    }
+
+    fn handles(&self, object: Gd<Object>) -> bool {
+        if !object.is_instance_valid() {
+            return false;
+        }
+        return object.is_class(GString::from("TileMapLayer")) || object.is_class(GString::from("TileSet"));
+    }
+
+    /* Setup only handles TileMayLayers */
+    fn physics_process(&mut self, delta: f64) {
+        // Count timer for file watch. Once it reaches 0, check for file changes
+        // if self.dock_scene_instance.is_some() {
+        //     godot_print!("Better terrain faster is dock visible: {}", self.dock_scene_instance.as_ref().unwrap().is_visible());
+        // }
+
+        self.file_watch_check(delta)
     }
 
     fn enter_tree(&mut self) {

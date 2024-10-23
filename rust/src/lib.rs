@@ -1,3 +1,5 @@
+mod model;
+
 use godot::prelude::*;
 
 struct TwilightArmadaExtension;
@@ -16,6 +18,7 @@ struct TwilightSprint2DDemo {
     stest: f64,
     base: Base<Sprite2D>
 }
+
 
 struct TwilightSprite2DDemoAtrributes {
     speed: f64,

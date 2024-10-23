@@ -38,7 +38,7 @@ project/assembly_name="twilight-armada"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/better-terrain-faster/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/godot-rapier2d/plugin.cfg", "res://addons/imjp94.yafsm/plugin.cfg", "res://addons/inputhelper/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/better-terrain-faster/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/imjp94.yafsm/plugin.cfg", "res://addons/inputhelper/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
 
 [input]
 
