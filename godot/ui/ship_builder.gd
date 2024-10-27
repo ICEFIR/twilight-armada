@@ -1,29 +1,44 @@
 extends Control
 
-var spriteContainer: HFlowContainer
-@export var spriteItem: PackedScene
+@export var sprite_item_scene: PackedScene
+@export var target_ship: ShipController
+
+var sprite_container: HFlowContainer
+var active_ship_build_component: ShipBuildComponent
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Get the HFlowContainer node from the scene.
-	spriteContainer = $Panel/ScrollContainer/HFlowContainer
-	scan_sprites()
+	sprite_container = $ScrollContainer/HFlowContainer
+	scan_ship_components()
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func add_item(texture: Texture2D) -> void:
+func add_item(texture: Texture2D, item_name: String) -> void:
 	# instantiate the sprite item and add it to the sprite container
-	var sprite_item = spriteItem.instantiate()
+	var sprite_item: SpriteItem = sprite_item_scene.instantiate()
 	sprite_item.set_texture(texture)
-	spriteContainer.add_child(sprite_item)
+	sprite_container.add_child(sprite_item)
+	sprite_item.set_onclick_callback(
+		func(): 
+			if active_ship_build_component:
+				active_ship_build_component.queue_free()
+			active_ship_build_component = ShipBuildComponent.new()
+			print("Selected sprite item: " + item_name)
+			active_ship_build_component.add_child(sprite_item.get_node("Sprite2D").duplicate())
+			if target_ship:
+				target_ship.add_child(active_ship_build_component)
+			else:
+				add_child(active_ship_build_component)
+	)
 
-func scan_sprites() -> void:
+func scan_ship_components() -> void:
+	print("Scanning for ship compoenents")
 	# scan components/ship_components for all sprite items
-	var scan_path = "res://components/ship_components"
+	var scan_path = "res://assets/components/ship_components"
 	var dir := DirAccess.open(scan_path)
 	if dir:
 		dir.list_dir_begin()
@@ -44,8 +59,7 @@ func scan_sprites() -> void:
 				if sprite_instance is Sprite2D:
 					var sprite_item: Sprite2D = sprite_instance as Sprite2D
 					print("Adding sprite item: " + file_name)
-					add_item(sprite_item.texture)
+					add_item(sprite_item.texture, file_name)
 				else:
 					print("The root node is not a Sprite2D for file: " + file_name)
 			file_name = dir.get_next()
-			

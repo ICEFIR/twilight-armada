@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://32chlkys6cl3"]
 
-[ext_resource type="PackedScene" uid="uid://cqcfkmxq2v7ob" path="res://scripts/player_controller.tscn" id="1_fmhik"]
-[ext_resource type="PackedScene" uid="uid://i83fmvlehwbl" path="res://scripts/ship_controller.tscn" id="1_vnls3"]
+[ext_resource type="PackedScene" uid="uid://cqcfkmxq2v7ob" path="res://components/player_controller.tscn" id="1_fmhik"]
+[ext_resource type="PackedScene" uid="uid://i83fmvlehwbl" path="res://components/ship_controller_test_v1.tscn" id="1_vnls3"]
 
 [node name="BattleGround" type="Node2D"]
 texture_filter = 1

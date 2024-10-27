@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://caygi74nwevmq"]
+[gd_scene load_steps=19 format=4 uid="uid://caygi74nwevmq"]
 
 [ext_resource type="Texture2D" uid="uid://dyfgv8kkrwtnw" path="res://assets/2d/tilsets/section/trees_bushes.png" id="1_446pn"]
 [ext_resource type="Texture2D" uid="uid://bthk4jh0tx1ew" path="res://assets/2d/tilsets/autotiles_merged/ground_autotile.png" id="1_ifdcj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_mjmjd"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_feq8e"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_4hoow"]
+[ext_resource type="PackedScene" uid="uid://da3kkvsgfekak" path="res://ui/ship_builder.tscn" id="7_s6ajg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcgef"]
 texture = ExtResource("1_ifdcj")
@@ -2581,8 +2582,7 @@ tile_map_data = PackedByteArray("AAAOAA8AAAABAAEAAAAOABAAAAABAAIAAAAPAA8AAAABAAE
 tile_set = SubResource("TileSet_5br6u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 304)
-zoom = Vector2(2, 2)
+position = Vector2(585, 306)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -2590,8 +2590,14 @@ process_physics_priority = 300
 script = ExtResource("4_mjmjd")
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
-position = Vector2(578, 304)
+position = Vector2(585, 306)
 script = ExtResource("5_feq8e")
-zoom = Vector2(2, 2)
+snap_to_pixel = true
 tween_resource = SubResource("Resource_m0jpg")
 tween_on_load = false
+
+[node name="ShipBuilder" parent="." instance=ExtResource("7_s6ajg")]
+offset_left = 298.0
+offset_top = 146.0
+offset_right = 298.0
+offset_bottom = 146.0

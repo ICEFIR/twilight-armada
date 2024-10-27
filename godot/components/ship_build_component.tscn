@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8fhv32pb007d"]
+
+[ext_resource type="Script" path="res://components/ship_build_component.gd" id="1_3xnpv"]
+
+[node name="ShipBuildComponent" type="Node2D"]
+script = ExtResource("1_3xnpv")

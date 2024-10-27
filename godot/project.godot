@@ -30,6 +30,9 @@ glossary/default_case_sensitive=true
 
 [display]
 
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
 
 [dotnet]
@@ -70,3 +73,5 @@ RightClick={
 [rendering]
 
 renderer/rendering_method="mobile"
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+2d/snap/snap_2d_transforms_to_pixel=true
