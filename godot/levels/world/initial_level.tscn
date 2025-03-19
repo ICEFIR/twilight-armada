@@ -740,6 +740,7 @@ metadata/_better_terrain = {
 physics_interpolation_mode = 1
 position = Vector2(593, 353)
 zoom = Vector2(2, 2)
+process_callback = 0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -783,3 +784,18 @@ shape = SubResource("RectangleShape2D_5biu7")
 texture = ExtResource("5_qncog")
 hframes = 3
 vframes = 4
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://assets/2d/characters/marco_polo/character.aseprite"
+}
+}
