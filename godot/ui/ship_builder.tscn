@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://da3kkvsgfekak"]
 
 [ext_resource type="PackedScene" uid="uid://dk6ulisv4mu2q" path="res://ui/sprite_item.tscn" id="1_vvo00"]
-[ext_resource type="Script" path="res://ui/ship_builder.gd" id="1_wj5kb"]
+[ext_resource type="Script" uid="uid://sgok31y4oaou" path="res://ui/ship_builder.gd" id="1_wj5kb"]
 
 [node name="ShipBuilder" type="Control"]
 layout_mode = 3

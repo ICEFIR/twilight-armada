@@ -12,7 +12,8 @@ config_version=5
 
 config/name="twilight-armada"
 run/main_scene="res://levels/main.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
+run/max_fps=120
 config/icon="res://icon.svg"
 
 [autoload]
@@ -41,7 +42,7 @@ project/assembly_name="twilight-armada"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/better-terrain-faster/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/imjp94.yafsm/plugin.cfg", "res://addons/inputhelper/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/better-terrain-faster/plugin.cfg", "res://addons/better-terrain/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/inventory-system/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
 
 [input]
 
@@ -69,9 +70,11 @@ RightClick={
 
 2d/run_on_separate_thread=true
 2d/physics_engine="Rapier2D"
+3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 
-renderer/rendering_method="mobile"
+textures/canvas_textures/default_texture_filter=0
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 2d/snap/snap_2d_transforms_to_pixel=true

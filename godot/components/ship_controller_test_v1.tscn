@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://i83fmvlehwbl"]
 
-[ext_resource type="Script" path="res://components/ship_controller_test_v1.gd" id="1_d6phu"]
+[ext_resource type="Script" uid="uid://rl38wv3uye5s" path="res://components/ship_controller_test_v1.gd" id="1_d6phu"]
 [ext_resource type="Texture2D" uid="uid://ehin7g77lfwy" path="res://assets/2d/general/outlined-white.png" id="2_rtjgf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ib4kj"]

@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dyfgv8kkrwtnw" path="res://assets/2d/tilsets/section/trees_bushes.png" id="1_446pn"]
 [ext_resource type="Texture2D" uid="uid://bthk4jh0tx1ew" path="res://assets/2d/tilsets/autotiles_merged/ground_autotile.png" id="1_ifdcj"]
 [ext_resource type="Texture2D" uid="uid://bju5w0oj4m7pb" path="res://assets/2d/tilsets/autotiles_merged/ground_dungeon_autotile.png" id="2_t4d6k"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_mjmjd"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_feq8e"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_4hoow"]
+[ext_resource type="Script" uid="uid://bffqfdkx06v6b" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_mjmjd"]
+[ext_resource type="Script" uid="uid://d0w0yhsxqiwd1" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_feq8e"]
+[ext_resource type="Script" uid="uid://de2vw7jvpwm8x" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_4hoow"]
 [ext_resource type="PackedScene" uid="uid://da3kkvsgfekak" path="res://ui/ship_builder.tscn" id="7_s6ajg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcgef"]
