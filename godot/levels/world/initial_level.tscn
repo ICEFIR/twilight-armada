@@ -4,7 +4,6 @@
 [ext_resource type="TileSet" uid="uid://bm5ee3nqvk4qh" path="res://assets/tilesets/GroudTileMap.tres" id="3_xlf8f"]
 [ext_resource type="TileSet" uid="uid://cvqvwp58p1ifs" path="res://assets/tilesets/Deco.tres" id="4_5biu7"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_80nf1"]
-[ext_resource type="Texture2D" uid="uid://b8xwfow85bu3h" path="res://assets/2d/Super_Retro_Collection/ARPG-pack-full_version/character_sprites/character_2/character_2_walk_shields_1.png" id="5_qncog"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_q40vo"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_t5h0j"]
 
@@ -734,6 +733,10 @@ metadata/_better_terrain = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5biu7"]
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qncog"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAADcAAAAUklGRtQAAABXRUJQVlA4TMgAAAAvH8AHEE+gJAAahkz0b4E8HrUKq6GokRTmvODfRS9OMMALCCQgzDPAPous8EPmPwAA8P/SM7JO+IQ856QtOG62vWlMhxvZAFUrN4cPydcUIOtY1AXYIG3jz0kmiOj/BIg/VfAspk17lEIDTgOAR5gJE7TFhgmEAvZ2t+l2jzBA17WM0Oi6mYpwbyeLTXMaUk6gms978hiVfx4jJ22yZNqOnFvkGSdyKXzmnOW5K+g8lzlnRjNy50r6Fv75R52wSz3uJFKHO4jvAw==")
+size_override = Vector2(32, 32)
+
 [node name="InitialLevel" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -781,13 +784,17 @@ position = Vector2(593, 353)
 shape = SubResource("RectangleShape2D_5biu7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("5_qncog")
-hframes = 3
-vframes = 4
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_qncog")
 metadata/_aseprite_wizard_interface_config_ = {
-"pending_changes": {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
 "embed_tex": true,
-"i_mode": 0,
+"i_mode": 1,
 "keep_anim_length": false,
 "layers": [],
 "o_ex_p": "",
@@ -798,4 +805,4 @@ metadata/_aseprite_wizard_interface_config_ = {
 "slice": "",
 "source": "res://assets/2d/characters/marco_polo/character.aseprite"
 }
-}
+metadata/_aseprite_wizard_source_file_hash_ = "ec0c9b2fb1322283e9f004809a9bc99c"
